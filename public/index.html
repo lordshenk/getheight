@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Get Your Chieu Cao</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.9.3/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.9.3/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.9.3/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.9.3/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.9.3/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+    
+  <style>
+  body {
+    background-image: url('http://getwallpapers.com/wallpaper/full/5/a/c/391924.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+  }
+  h2 {
+    color: rgb(42, 45, 60, 0.8);
+    width: 50%;
+    text-align: left;
+    font-family: oswald, sans-serif;
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px rgb(78, 82, 109, 0.4);
+    font-weight: 100;
+  }
+
+  button {
+    background-color: #40AFE0;
+    border: 3px solid #40AFE0;
+    border-radius: 20px;
+    font-size: 18px;
+    color: rgb(255, 255, 255, 0.8);
+    padding: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    outline: none;
+    letter-spacing: 2px;
+    position: relative; top: 180px;
+    font-family: Montserrat, sans-serif;
+  }
+
+  button:focus {
+    background-color: rgb(56, 154, 196);
+    border: 3px solid rgb(56, 154, 196);
+    color: rgb(224, 224, 224);
+  }
+
+  input {
+    width: 45%;
+    height: 30px;
+    border: 2px solid rgb(241, 241, 243, 0.5);
+    border-radius: 20px;
+    background-color: rgb(241, 241, 243, 0.4);
+    outline: none;
+    text-align: center;
+    position: relative; top: 180px;
+  }
+  input:focus {
+    background-color: rgb(241, 241, 243, 0.3);
+  }
+
+  span {
+    color: rgb(86, 93, 107);
+    font-size: 20px;
+    /*border: 2px solid white;
+    border-radius: 10px;*/
+    padding: 10px;
+    font-family: sans-serif;
+    /*background-color: white;*/
+  }
+  a {
+    text-decoration: none;
+    color: rgb(64, 175, 224, 0.7);
+    border: 2px solid rgb(241, 241, 243);
+    border-radius: 20px;
+    padding: 8px;
+    background-color: rgb(241, 241, 243);
+    position: relative; top: 385px;
+  }
+  a:active {
+    outline: none;
+  }
+
+  </style>
+
+  </head>
+  <body>
+    
+  <h2>GET YOUR CHIEU CAO</h2>
+  <input id="i01" type="text" name="getTall" placeholder="Nhập chiều cao của bạn">
+  <br><br>
+  <button id="b01">Done</button>
+  <p><span id="p01"></span></p>
+  <p><a href="https://www.facebook.com/khanh2909"><strong>Link</strong></a></p>
+  <script type="text/javascript">
+    var input = document.getElementById('i01');
+    var button = document.getElementById('b01');
+    var para = document.getElementById('p01');
+    var span = document.querySelector('span');
+    //var body = document.getElementsByTagName('body');
+
+    input.addEventListener('keyup', getWhite);
+    button.addEventListener('click', getTall);
+
+    function getWhite() {
+      span.style.border = 'transparent';
+      span.style.backgroundColor = 'transparent';
+      span.textContent = '';
+    }
+
+    function getTall() {
+
+      var parseInput = parseInt(input.value);
+      var inputString = input.value.toLowerCase();
+
+      span.style.border = '2px transparent rgb(250, 249, 255, 0.8)';
+      span.style.borderRadius = '10px';
+      span.style.backgroundColor = 'rgb(250, 249, 255, 0.8)';
+
+      if (inputString.substring(inputString.length - 2) == 'cm') {
+        inputString = inputString.substring(0, inputString.length - 2);
+      }
+      if (isNaN(parseInput)) {
+        para.innerHTML = 'Nhập chiều cao vào con gà...';
+      } else if (parseInput >= 250){
+        para.innerHTML = 'Am i a joke to you ?';
+      } else if (parseInput <= 120) {
+        para.innerHTML = 'Nà ní ?';
+      } else if (parseInput <= 155) {
+        para.innerHTML = 'Bạn cao:  ' + inputString + 'cm - Thấp hơn Khánh :)';
+      } else {
+        para.innerHTML = 'Chiều cao của bạn là:   ' + inputString + 'cm';
+      }
+      input.value = '';
+    }
+  </script>
+
+  </body>
+</html>
