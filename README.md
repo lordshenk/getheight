@@ -1,3 +1,4 @@
 
-**Trang web giup xem chieu cao cua minh khi nhap vao chieu cao**
+**Trang web giup xem chieu cao cua ban**
+
 [GetYourTall](http://getyourtall.firebaseapp.com/)
