@@ -1,4 +1,4 @@
 
-**Trang web giup xem chieu cao cua ban**
+## Just for fun  
 
 [GetYourTall](http://getyourtall.firebaseapp.com/)
